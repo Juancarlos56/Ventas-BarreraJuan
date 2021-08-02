@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Carrito de Compras</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      Listado de Productos
+    </ion-list-header>
+    <div *ngFor="let producto of productosCarrito | async" >
+      <ion-item>
+        <ion-icon slot="start"></ion-icon>
+        <ion-label>
+          <h2>{{producto.nombre}}</h2>
+          <!--<h3><ion-button (click)='llamarTelefono(contacto.telefono)'>{{contacto.telefono}}</ion-button></h3>-->
+          <p>{{producto.descripcion}}</p>
+          <p>{{producto.precio}}</p>
+          <p>{{producto.url}}</p>
+          <img src="{{producto.url}}" alt="imagen de casa madison"/>
+          
+        </ion-label> 
+      </ion-item>
+    </div>
+  </ion-list>
+  <ion-button color="success" (click)="vaciarCarrito()">Vaciar Carrito</ion-button>
+  <ion-button (click)="llamarTelefono('0980990592')">Puede llamarnos: 0980990592</ion-button>
+
+</ion-content>

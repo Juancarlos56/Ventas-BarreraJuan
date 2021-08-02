@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>mostrarProducto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label fixed>Nombre</ion-label>
+      <ion-input [(ngModel)]="producto.nombre" type="text" value=""></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label fixed>Precio</ion-label>
+      <ion-input [(ngModel)]="producto.precio" type="text" value=""></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Descripcion</ion-label>
+      <ion-input [(ngModel)]="producto.descripcion" type="text" value=""></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Imagen</ion-label>
+      <img src="{{producto.url}}" alt="imagen de casa madison"/>
+    </ion-item>
+    
+    <ion-button color="success" (click)="agregarAlCarrito(producto)">Agregar al carrito</ion-button>
+
+  </ion-list>
+
+
+</ion-content>
